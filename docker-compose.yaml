@@ -1,0 +1,27 @@
+version: "2"
+services:
+  publish:
+    depends_on: ["compile"]
+    image: anigeo/awscli
+    volumes:
+    - "~/.aws:/root/.aws"
+    volumes_from:
+    - "compile"
+    environment:
+    - "AWS_PROFILE=${AWS_PROFILE}"
+    command: ["s3","sync", "/tmp/_book", "s3://gitbook.kinoboku.net/"]
+  compile:
+    build: .
+    volumes:
+    - "./src:/tmp/src"
+    working_dir: /tmp/src
+    command: "build"
+
+  viewer:
+    build: .
+    volumes:
+    - "./src:/tmp/src"
+    ports:
+    - "4000:4000"
+    working_dir: /tmp/src
+    command: "serve"

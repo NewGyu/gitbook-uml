@@ -1,0 +1,5 @@
+{
+  "root": ".",
+  "title": "PalThrow Docs",
+  "plugins": ["-sharing", "uml"]
+}

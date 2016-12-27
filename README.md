@@ -1,15 +1,10 @@
-# PalThrow Doc のコンテンツ
+# GitbookとPlantUMLでUML図入りの文書を管理する
 
 Gitbookでコンテンツ管理してみる試みのためのものです。コンテンツは[./src](src)以下にあるので、ここではドキュメントの公開の方法だけ書きます。
 
 ## 必要なもの
 
-以下のどちらか。
-
-* [Docker for Windows](https://docs.docker.com/docker-for-windows/)
-* [Docker Toolbox](https://docs.docker.com/toolbox/overview/)
-
-Docker for Windowsと ToolBoxの微妙な違いは[こちら](http://qiita.com/NewGyu/items/d9e6bddb85e2bf9afd15#docker-for-windows-%E3%81%A8-docker-toolbox)を。
+* Docker
 
 ## 使い方
 
@@ -27,3 +22,20 @@ $ AWS_PROFILE=xxxx docker-compose up publish
 
 AWS_PROFILEは自分の`~/.aws/credentials`の設定に合わせてください。
 
+## 構造
+
+```
+.
+├── Dockerfile            ...Gitbookのツールセット入りイメージを作る
+├── README.md
+├── docker-compose.yaml   ...ローカルViewer, S3へのPublishの設定
+├── fonts.conf            ...日本語フォント設定
+├── ipag.ttc              ...日本語フォント
+├── gitbook.sh            ...Gitbookソースのコンパイル、ローカルView実行のスクリプト
+└── src                   ...Gitbookのソース
+    ├── README.md
+    ├── SUMMARY.md
+    ├── book.json
+    └── uml
+
+```

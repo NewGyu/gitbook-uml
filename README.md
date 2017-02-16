@@ -26,16 +26,18 @@ AWS_PROFILEは自分の`~/.aws/credentials`の設定に合わせてください�
 
 ```
 .
-├── Dockerfile            ...Gitbookのツールセット入りイメージを作る
+├── .docker
+│   ├── Dockerfile      ...Gitbookのツールセット入りイメージを作る
+│   ├── fonts.conf      ...日本語フォント設定
+│   ├── gitbook.sh      ...Gitbookソースのコンパイル、ローカルView実行のスクリプト
+│   └── ipag.ttc        ...日本語フォント
+├── .gitignore
 ├── README.md
 ├── docker-compose.yaml   ...ローカルViewer, S3へのPublishの設定
-├── fonts.conf            ...日本語フォント設定
-├── ipag.ttc              ...日本語フォント
-├── gitbook.sh            ...Gitbookソースのコンパイル、ローカルView実行のスクリプト
-└── src                   ...Gitbookのソース
+└── src
+    ├── .bookignore
     ├── README.md
     ├── SUMMARY.md
     ├── book.json
     └── uml
-
 ```

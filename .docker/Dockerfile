@@ -21,6 +21,13 @@ RUN set -x \
 	&& apk add --no-cache \
 		openjdk8-jre="$JAVA_ALPINE_VERSION" \
 	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
+# install awscli
+RUN \
+	mkdir -p /aws && \
+	apk -Uuv add groff less python py-pip && \
+	pip install awscli && \
+	apk --purge -v del py-pip && \
+	rm /var/cache/apk/*
 # install plantuml
 RUN npm install -g gitbook-plugin-uml && apk add --no-cache graphviz
 COPY ./gitbook.sh /usr/bin/

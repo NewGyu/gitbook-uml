@@ -7,14 +7,15 @@ cd $SRC_DIR
 gitbook install
 
 case "$1" in 
-  build)
+  publish)
     gitbook build $SRC_DIR $BUILD_DIR
+    aws s3 sync $BUILD_DIR s3://gitbook.kinoboku.net/
     ;;
   serve)
     gitbook serve $SRC_DIR $BUILD_DIR
     ;;
   *)
-    echo "Usage: $0 {build|serve}"
+    echo "Usage: $0 {publish|serve}"
     exit 1
     ;;
 esac

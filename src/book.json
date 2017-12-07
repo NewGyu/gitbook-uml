@@ -1,5 +1,5 @@
 {
   "root": ".",
-  "title": "PalThrow Docs",
+  "title": "Gitbook with PlantUML",
   "plugins": ["-sharing", "uml"]
 }

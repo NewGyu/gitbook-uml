@@ -1,6 +1,6 @@
-* [はじめに](README.md)
+* [Read Me First](README.md)
 
 * UML
-  * [クラス図](uml/class.md)
-  * [アクティビティ図](uml/activity.md)
-  * [ステート図](uml/state.md)
+  * [Class Diagram](uml/class.md)
+  * [Activity Diagram](uml/activity.md)
+  * [State Diagram](uml/state.md)

@@ -1,4 +1,4 @@
-## 状態遷移図
+## State Diagram
 
 ```uml
 @startuml

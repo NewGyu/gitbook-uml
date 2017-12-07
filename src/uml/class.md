@@ -1,4 +1,4 @@
-## クラス図
+## Class Diagram
 
 ```uml
 @startuml

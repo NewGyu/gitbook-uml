@@ -1,4 +1,4 @@
-## アクティビティ図
+## Activity Diagram
 
 ```uml
 @startuml

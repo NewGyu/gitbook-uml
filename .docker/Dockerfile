@@ -28,6 +28,7 @@ RUN \
 	pip install awscli && \
 	apk --purge -v del py-pip && \
 	rm /var/cache/apk/*
+RUN apk add --no-cache git
 # install plantuml
 RUN npm install -g gitbook-plugin-uml && apk add --no-cache graphviz
 COPY ./gitbook.sh /usr/bin/

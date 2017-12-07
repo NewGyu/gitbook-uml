@@ -1,43 +1,31 @@
-# GitbookとPlantUMLでUML図入りの文書を管理する
+# Gitbook with PlantUML
 
-Gitbookでコンテンツ管理してみる試みのためのものです。コンテンツは[./src](src)以下にあるので、ここではドキュメントの公開の方法だけ書きます。
+This is a sample for creating contents that includes UML diagram with [Gitbook](https://toolchain.gitbook.com/).
 
-## 必要なもの
+The source of contents is under [./src](src).
 
-* Docker
+I wrote the way to publish and the way to browse on your machine local.
 
-## 使い方
+## Requirements
 
-### Gitbookをローカルで試す
+* Docker & docker-compose
+
+## How to use
+
+### Try to browse on your machine local.
 
 ```
 $ docker-compose up viewer
 ```
 
-### S3に発行して公開する
+Access to http://localhost:4000
+
+### Publish to Amazon S3
 
 ```
 $ AWS_PROFILE=xxxx docker-compose up publish
 ```
 
-AWS_PROFILEは自分の`~/.aws/credentials`の設定に合わせてください。
+xxxx is profile name.
 
-## 構造
-
-```
-.
-├── .docker
-│   ├── Dockerfile      ...Gitbookのツールセット入りイメージを作る
-│   ├── fonts.conf      ...日本語フォント設定
-│   ├── gitbook.sh      ...Gitbookソースのコンパイル、ローカルView実行のスクリプト
-│   └── ipag.ttc        ...日本語フォント
-├── .gitignore
-├── README.md
-├── docker-compose.yaml   ...ローカルViewer, S3へのPublishの設定
-└── src
-    ├── .bookignore
-    ├── README.md
-    ├── SUMMARY.md
-    ├── book.json
-    └── uml
-```
+Access to http://gitbook.kinoboku.net.s3-website-ap-northeast-1.amazonaws.com/
